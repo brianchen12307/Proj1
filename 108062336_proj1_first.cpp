@@ -91,7 +91,7 @@ class Block{
         Point block_rec[4][4];
 };
 
-int main(){
+int main(int argc, char **argv){
     map<string, Block> block_map;
     Point a(3, 1) ,b(3, 2), c(3, 3) ,d(4, 2);
     Block T1(a, b, c, d);
@@ -152,7 +152,7 @@ int main(){
     block_map.insert(pair<string, Block>("O", O));
     //read file
     ifstream file;
-    file.open("3_revised.data");
+    file.open(argv[1]);
 
     int row, col, ref_col, move;
     string str;
