@@ -17,7 +17,6 @@ class Point{
         }
         int x, y, ocup;
 };
-
 class Rec{
     public:
         Rec(int in_row, int in_col){
@@ -63,7 +62,6 @@ class Rec{
         int col;
         Point **board;
 };
-
 class Block{
     public:
         Block(Point op1, Point op2, Point op3, Point op4){
@@ -160,7 +158,7 @@ int main(int argc, char **argv){
     ofstream fout;
     fin.open(argv[1]);
     fout.open("108062336_proj1.final");
-
+    
     int row, col, ref_col, move;
     string str;
     fin >> row >> col;
@@ -172,7 +170,7 @@ int main(int argc, char **argv){
         else{
             fin >> ref_col >> move;
             Block cur = block_map.at(str);
-
+            //block appear at the toppest board
             for(int i = 0;i < 4;i++){
                 for(int j = 0;j < 4;j++){
                     cur.block_rec[i][j].x -= 3;
@@ -213,7 +211,7 @@ int main(int argc, char **argv){
                     for(int i = 0;i < 4;i++){
                         for(int j = 0;j < 4;j++){
                             //whether over horizontal?
-                            if(cur.block_rec[i][j].ocup)
+                            if(cur.block_rec[i][j].ocup && cur.block_rec[i][j].x > 1)
                                 teris.board[cur.block_rec[i][j].x - 1][cur.block_rec[i][j].y - 1].ocup = 1;
                         }
                     }
