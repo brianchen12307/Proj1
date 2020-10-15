@@ -210,8 +210,7 @@ int main(int argc, char **argv){
                 if(flag){
                     for(int i = 0;i < 4;i++){
                         for(int j = 0;j < 4;j++){
-                            //whether over horizontal?
-                            if(cur.block_rec[i][j].ocup && cur.block_rec[i][j].x > 1)
+                            if(cur.block_rec[i][j].ocup && cur.block_rec[i][j].x >= 1)
                                 teris.board[cur.block_rec[i][j].x - 1][cur.block_rec[i][j].y - 1].ocup = 1;
                         }
                     }
